@@ -1,3 +1,13 @@
+/*===============
+  GLOBAL CSS
+  
+  filename: style.css
+  author: Son Roy Almerol
+  author id: 301220547
+  date: May 20, 2022
+
+  =============== */
+
 body {
   margin: 0px;
   box-sizing: border-box;
@@ -5,6 +15,7 @@ body {
   padding-top: 100px;
   background-image: linear-gradient(135deg, #cca8d8, #fa897b);
   color: white;
+  overflow-x: hidden;
 }
 
 body, span, b, button {
@@ -21,24 +32,36 @@ main {
   padding-right: 80px;
 }
 
+footer {
+  width: 100vw;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+footer .footer-text {
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
 .navbar {
   position: fixed;
   top: 50px;
   left: 80px;
   right: 80px;
   display: flex;
-  
-  /* From https://css.glass */
+
+  align-items: center;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.card {
   background: rgba(255, 255, 255, 0.22);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
-
-  align-items: center;
-  padding-left: 30px;
-  padding-right: 30px;
-
   border-radius: 60px;
 }
 
@@ -69,6 +92,9 @@ main {
 
 .menu.active {
   font-weight: bold;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
 }
 
 .menu:active {
