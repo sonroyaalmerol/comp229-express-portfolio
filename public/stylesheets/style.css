@@ -65,6 +65,32 @@ footer .footer-text {
   border-radius: 60px;
 }
 
+.button, button {
+  background: rgba(255, 255, 255, 0.22);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 60px;
+  color: white;
+  font-weight: bold;
+  padding: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  font-size: large;
+  cursor: pointer;
+  transition: box-shadow 100ms;
+  text-decoration: none;
+}
+
+.button:hover, button:hover {
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+.button:active, button:active {
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0);
+}
+
 .logo {
   color: white;
 }

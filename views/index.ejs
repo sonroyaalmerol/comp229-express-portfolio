@@ -4,6 +4,7 @@
     <title><%= title %></title>
 
     <%- include('partials/css-imports') %>
+    <link rel='stylesheet' href='/stylesheets/text-carousel.css' />
   </head>
   <body>
     <!-- Navbar -->
@@ -11,7 +12,36 @@
 
     <!-- Main content -->
     <main>
-      <h1>Hello World!</h1>
+      <h1 style="text-align: center; margin-top: 100px;">Looking for someone who can build your</h1>
+      <div class="content-slider">
+        <div class="slider">
+          <div class="mask">
+            <ul>
+              <li class="text1">
+                <h1>Business Websites?</h1>
+              </li>
+              <li class="text2">
+                <h1>Management Systems?</h1>
+              </li>
+              <li class="text3">
+                <h1>E-commerce Websites?</h1>
+              </li>
+              <li class="text4">
+                <h1>Blogs?</h1>
+              </li>
+              <li class="text5">
+                <h1>Portfolio Websites?</h1>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <h3 style="text-align: center; margin-top: 60px; margin-bottom: 60px; font-family: Open Sans;">
+        I'm a web developer currently living in Toronto, Canada.
+      </h3>
+      <center>
+        <a class="button" href="/contact">Hit me up!</a>
+      </center>
     </main>
 
     <!-- Footer -->
