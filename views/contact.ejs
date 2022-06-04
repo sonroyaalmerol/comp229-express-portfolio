@@ -11,7 +11,25 @@
 
     <!-- Main content -->
     <main>
-      <h1>Hello Contact!</h1>
+      <h1 style="margin-bottom: 100px;">Contact and Socials</h1>
+      <form id="contact-form">
+        <div>
+          <input type="text" placeholder="First Name" name="first_name" style="margin: 5px"></input>
+          <input type="text" placeholder="Last Name" name="last_name" style="margin: 5px"></input>
+        </div>
+        <div>
+          <input type="text" placeholder="Contact Number" name="contact" style="margin: 5px; width: 400px"></input>
+        </div>
+        <div>
+          <input type="email" placeholder="Email Address" name="email" style="margin: 5px; width: 400px"></input>
+        </div>
+        <div>
+          <textarea placeholder="Message" name="message" style="margin: 5px; width: 400px"></textarea>
+        </div>
+        <div style="margin-top: 50px;">
+          <button type="submit">Submit</button>
+        </div>
+      </form>
     </main>
 
     <!-- Footer -->
@@ -22,6 +40,6 @@
       document.getElementById('nav-contact').classList.add('active');
     </script>
 
-    <script src="/javascripts/script.js" />
+    <script src="/javascripts/script.js"></script>
   </body>
 </html>

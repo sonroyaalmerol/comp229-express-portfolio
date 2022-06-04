@@ -13,9 +13,23 @@ body {
   box-sizing: border-box;
   min-height: 100vh;
   padding-top: 100px;
-  background-image: linear-gradient(135deg, #cca8d8, #fa897b);
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
   color: white;
   overflow-x: hidden;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 body, span, b, button {
@@ -30,6 +44,7 @@ main {
   padding: 50px;
   padding-left: 80px;
   padding-right: 80px;
+  text-align: center;
 }
 
 footer {
@@ -65,6 +80,28 @@ footer .footer-text {
   border-radius: 60px;
 }
 
+.avatar {
+  background: rgba(255, 255, 255, 0.22) url("/images/1024-1820.jpg");
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 20px;
+  border-radius: 500px;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.grid-container {
+  display: grid;
+}
+
+
 .button, button {
   background: rgba(255, 255, 255, 0.22);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -81,6 +118,30 @@ footer .footer-text {
   cursor: pointer;
   transition: box-shadow 100ms;
   text-decoration: none;
+}
+
+input, textarea {
+  background: rgba(255, 255, 255, 0.22);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 60px;
+  color: white;
+  font-weight: bold;
+  padding: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+::placeholder {
+  color: white;
+  opacity: 0.8;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0);
 }
 
 .button:hover, button:hover {
@@ -125,4 +186,27 @@ footer .footer-text {
 
 .menu:active {
   background-color: transparent;
+}
+
+.project-container {
+  margin-bottom: 100px;
+}
+
+.project-description {
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  max-width: 512px;
+}
+
+.project-image {
+  width: 512px;
+  margin: auto;
+  
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+ul {
+  list-style-type: none;
 }
