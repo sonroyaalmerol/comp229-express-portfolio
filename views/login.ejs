@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+
+    <%- include('partials/css-imports') %>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <%- include('partials/navbar') %>
+
+    <!-- Main content -->
+    <main>
+      <h1 style="margin-bottom: 100px;">Login</h1>
+      <form id="contact-form">
+        <div>
+          <input type="text" placeholder="Username" name="username" style="margin: 5px; width: 400px"></input>
+        </div>
+        <div>
+          <input type="password" placeholder="Password" name="password" style="margin: 5px; width: 400px"></input>
+        </div>
+        <div style="margin-top: 50px;">
+          <button type="submit">Login</button>
+        </div>
+      </form>
+    </main>
+
+    <!-- Footer -->
+    <%- include('partials/footer') %>
+
+    <!-- Scripts -->
+    <script>
+      // document.getElementById('nav-contact').classList.add('active');
+    </script>
+
+    <script src="/javascripts/script.js"></script>
+  </body>
+</html>
