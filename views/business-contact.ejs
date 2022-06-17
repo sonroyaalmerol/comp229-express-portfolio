@@ -34,11 +34,11 @@
         </div>
         <div style="margin-top: 50px;">
           <button type="submit"><%= !data._id ? 'Add' : 'Update' %></button>
-          <button onclick="window.location.href='/admin/contacts'">Cancel</button>
+          <button onclick="window.location.href='/admin/contacts'; return false;">Cancel</button>
         </div>
         <% if (data._id) { %>
           <div style="margin-top: 50px;">
-            <button onclick="window.location.href='/admin/contacts/<%= data._id %>/delete'">Delete</button>
+            <button onclick="window.location.href='/admin/contacts/<%= data._id %>/delete'; return false;">Delete</button>
           </div>
         <% } %>
       </form>
