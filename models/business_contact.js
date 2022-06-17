@@ -10,7 +10,8 @@ const BusinessContactSchema = new mongoose.Schema({
   },
   email: {
     type: String,
-    index: true
+    index: true,
+    match: [/.+\@.+\..+/, "Please fill in a valid email address!"]
   }
 });
 

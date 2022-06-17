@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+
+    <%- include('partials/css-imports') %>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <%- include('partials/navbar') %>
+
+    <!-- Main content -->
+    <main>
+      <h1 style="margin-bottom: 100px;">Business Contact</h1>
+      <form method="post" <% if (!data._id) { %> action="/admin/contacts" <% } %> >
+        <div class="container">
+          <div class="row m-2">
+            <div class="col">
+              <input type="text" placeholder="Name" name="name" value="<%= data.name %>"></input>
+            </div>
+          </div>
+          <div class="row m-2">
+            <div class="col">
+              <input type="text" placeholder="Contact Number" name="number" value="<%= data.number %>"></input>
+            </div>
+          </div>
+          <div class="row m-2">
+            <div class="col">
+              <input type="email" placeholder="Email Address" name="email" value="<%= data.email %>"></input>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top: 50px;">
+          <button type="submit"><% if (!data._id) { %> Add <% } else { %> Update <% } %></button>
+        </div>
+      </form>
+    </main>
+
+    <!-- Footer -->
+    <%- include('partials/footer') %>
+    <%- include('partials/toast') %>
+
+    <!-- Scripts -->
+    <script>
+      document.getElementById('nav-business-contacts').classList.add('active');
+    </script>
+
+    <%- include('partials/js-imports') %>
+  </body>
+</html>

@@ -31,8 +31,7 @@ router.post('/login', passport.authenticate('local', {
 });
 
 router.get('/register', (req, res) => {
-  console.log(req.user);
-  if (req.user) {
+  if (req.isAuthenticated()) {
     res.redirect('/');
   }
 

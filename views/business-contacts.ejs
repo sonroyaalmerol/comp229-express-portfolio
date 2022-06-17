@@ -12,35 +12,28 @@
     <!-- Main content -->
     <main>
       <h1 style="margin-bottom: 100px;">Business Contacts</h1>
-
-      <table class="table">
+      <a class="button float-start mb-4 ms-5" href="/admin/contacts/new">Add New</a>
+      <table class="table glass-card" cellspacing="0" cellpadding="0">
         <thead>
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">Name</th>
+            <th scope="col">Number</th>
+            <th scope="col">Email</th>
+            <th scope="col">Actions</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
+          <% for (var i = 0; i < data.length; i++) { %> 
+            <tr>
+              <th scope="row"><%= data[i].name %></th>
+              <td><%= data[i].number %></td>
+              <td><%= data[i].email %></td>
+              <td>
+                <a class="button" href="/admin/contacts/<%= data[i]._id %>">Edit</a>
+                <a class="button" href="/admin/contacts/<%= data[i]._id %>/delete">Delete</a>
+              </td>
+            </tr>
+          <% } %> 
         </tbody>
       </table>
     </main>

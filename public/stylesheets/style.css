@@ -92,6 +92,31 @@ footer .footer-text {
   border-radius: 60px;
 }
 
+table.glass-card {
+  background: rgba(255, 255, 255, 0.22);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 0px solid rgba(255, 255, 255, 0.3);
+  border-radius: 60px;
+  color: white;
+  border: none;
+  border-collapse: separate;
+  padding: 1rem;
+}
+
+tr td {
+  border: 0;
+  text-align: center; 
+  vertical-align: middle;
+}
+
+tr th {
+  border: 0;
+  text-align: center; 
+  vertical-align: middle;
+}
+
 .toast {
   position: fixed;
   left: 50%;
@@ -166,7 +191,7 @@ footer .footer-text {
   border-radius: 60px;
   color: white;
   font-weight: bold;
-  padding: 1rem;
+  padding: 0.5rem;
   padding-left: 2rem;
   padding-right: 2rem;
   font-size: large;
@@ -202,6 +227,7 @@ input:focus, textarea:focus {
 
 .button:hover, button:hover {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  color: white;
 }
 
 .button:active, button:active {
