@@ -1,8 +1,12 @@
 const mongoose = require('mongoose');
+const env = require('./env');
 
-const uri = "mongodb+srv://portfolio:portfolio@cluster0.1cgt2.mongodb.net/?retryWrites=true&w=majority";
-
-mongoose.connect(uri);
+exports.connect = () => {
+  mongoose.connect(env.databaseUri,{
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  });
+}
 
 
 

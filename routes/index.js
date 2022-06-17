@@ -1,9 +1,13 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'snry | Home' });
+router.get('/', (req, res, next) => {
+  return res.render('index', { 
+    title: 'snry | Home',
+    success: req.flash('success'),
+    error: req.flash('error')
+  });
 });
 
 module.exports = router;

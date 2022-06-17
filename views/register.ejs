@@ -11,7 +11,7 @@
 
     <!-- Main content -->
     <main>
-      <h1 style="margin-bottom: 100px;">Login</h1>
+      <h1 style="margin-bottom: 100px;">Registration</h1>
       <form id="login-form" method="post">
         <div>
           <input type="text" placeholder="Username" name="username" style="margin: 5px; width: 400px"></input>
@@ -19,8 +19,14 @@
         <div>
           <input type="password" placeholder="Password" name="password" style="margin: 5px; width: 400px"></input>
         </div>
+        <div>
+          <input type="password" placeholder="Confirm Password" name="confirmPassword" style="margin: 5px; width: 400px"></input>
+        </div>
+        <div>
+          <input type="email" placeholder="Email" name="email" style="margin: 5px; width: 400px"></input>
+        </div>
         <div style="margin-top: 50px;">
-          <button type="submit">Login</button>
+          <button type="submit">Register</button>
         </div>
       </form>
     </main>
@@ -31,7 +37,7 @@
 
     <!-- Scripts -->
     <script>
-      document.getElementById('nav-login').classList.add('active');
+      document.getElementById('nav-register').classList.add('active');
     </script>
 
     <script src="/javascripts/script.js"></script>

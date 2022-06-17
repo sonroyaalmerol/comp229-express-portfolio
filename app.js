@@ -10,10 +10,14 @@ var contactRouter = require('./routes/contact');
 var projectsRouter = require('./routes/projects');
 var servicesRouter = require('./routes/services');
 var adminRouter = require('./routes/admin');
+var authRouter = require('./routes/auth');
 
-require('./utils/db');
+require('./utils/db').connect();
 
 var app = express();
+
+const flash = require('connect-flash');
+app.use(flash());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -25,12 +29,42 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+const session = require('express-session');
+
+const secret = require('./utils/env').secret;
+
+app.use(session({
+  secret,
+  resave: true,
+  saveUninitialized: true,
+  cookie: {
+    secure: false,
+    maxAge : (1 * 60 * 60 * 1000)
+  }
+}));
+
+const passport = require('passport');
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+require('./utils/passport').initialize();
+
+app.use((req, res, next) => {
+  if (req.session.passport) { 
+    res.locals.isAuthenticated = req.isAuthenticated();
+  }
+
+  return next();
+});
+
 app.use('/', indexRouter);
 app.use('/about', aboutRouter);
 app.use('/contact', contactRouter);
 app.use('/projects', projectsRouter);
 app.use('/services', servicesRouter);
 app.use('/admin', adminRouter);
+app.use('/auth', authRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -13,4 +13,10 @@
   <a class="menu" id="nav-projects" href="/projects">Projects</a>
   <a class="menu" id="nav-services" href="/services">Services</a>
   <a class="menu" id="nav-contact" href="/contact">Contact</a>
+  <% if (!locals.isAuthenticated) { %> 
+    <a class="menu" id="nav-login" href="/auth/login">Login</a>
+    <a class="menu" id="nav-register" href="/auth/register">Sign Up</a>
+  <% } else { %>
+    <a class="menu" id="nav-logout" href="/auth/logout">Log Out</a>
+  <% } %> 
 </nav>
