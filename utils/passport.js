@@ -1,8 +1,19 @@
+/*===============
+  PASSPORT UTILITIES JS
+  
+  filename: passport.js
+  author: Son Roy Almerol
+  author id: 301220547
+  date: June 16, 2022
+
+  =============== */
+
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const { login } = require('./auth');
 const User = require('../models/user').User;
 
+// Initialize Passport.js strategy
 exports.initialize = () => {
   passport.serializeUser((user, done) => {
     console.log('serialize');

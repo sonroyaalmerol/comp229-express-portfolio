@@ -52,6 +52,7 @@ app.use(passport.session());
 
 require('./utils/passport').initialize();
 
+// Pass authenticated status to locals for EJS templates to access
 app.use((req, res, next) => {
   if (req.session.passport) { 
     res.locals.isAuthenticated = req.isAuthenticated();

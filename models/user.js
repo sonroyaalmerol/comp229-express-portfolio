@@ -1,3 +1,13 @@
+/*===============
+  USER MODEL JS
+  
+  filename: user.js
+  author: Son Roy Almerol
+  author id: 301220547
+  date: June 17, 2022
+
+  =============== */
+
 const mongoose = require('mongoose');
 const crypto = require('crypto');
 
@@ -32,6 +42,7 @@ const UserSchema = new mongoose.Schema({
   }
 });
 
+// Hash password and generate salt before saving
 UserSchema.pre('save', async function (next) {
   const user = this;
 
@@ -43,10 +54,13 @@ UserSchema.pre('save', async function (next) {
   next();
 });
 
+// Hashing function
 UserSchema.methods.hashPassword = function(password) {
   return crypto.pbkdf2Sync(password, this.salt, 10000, 64, 'sha512').toString('base64');
 };
 
+
+// Password validation
 UserSchema.methods.isValidPassword = async function(password) {
   const user = this;
   return user.password === this.hashPassword(password);

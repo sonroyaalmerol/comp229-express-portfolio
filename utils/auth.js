@@ -1,5 +1,16 @@
+/*===============
+  AUTH UTILITIES JS
+  
+  filename: auth.js
+  author: Son Roy Almerol
+  author id: 301220547
+  date: June 16, 2022
+
+  =============== */
+
 const User = require('../models/user').User;
 
+// Login validation and processing
 const login = async (username, password) => {
   if (!username || !password) {
     throw new Error("Username and password is required!");
@@ -22,7 +33,12 @@ const login = async (username, password) => {
   return user;
 }
 
+// Registration validation and processing
 const register = async (username, password, confirmPassword, email) => {
+  if (!username || !password || !confirmPassword || !email) {
+    throw new Error("All fields are required!");
+  }
+
   if (password !== confirmPassword) {
     throw new Error("Password does not match!");
   }
