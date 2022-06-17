@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+
+    <%- include('partials/css-imports') %>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <%- include('partials/navbar') %>
+
+    <!-- Main content -->
+    <main>
+      <h1 style="margin-bottom: 100px;">Business Contacts</h1>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+
+    <!-- Footer -->
+    <%- include('partials/footer') %>
+    <%- include('partials/toast') %>
+
+    <!-- Scripts -->
+    <script>
+      document.getElementById('nav-business-contacts').classList.add('active');
+    </script>
+
+    <%- include('partials/js-imports') %>
+  </body>
+</html>

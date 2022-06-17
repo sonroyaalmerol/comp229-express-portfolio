@@ -13,18 +13,30 @@
     <main>
       <h1 style="margin-bottom: 100px;">Contact and Socials</h1>
       <form id="contact-form">
-        <div>
-          <input type="text" placeholder="First Name" name="first_name" style="margin: 5px"></input>
-          <input type="text" placeholder="Last Name" name="last_name" style="margin: 5px"></input>
-        </div>
-        <div>
-          <input type="text" placeholder="Contact Number" name="contact" style="margin: 5px; width: 400px"></input>
-        </div>
-        <div>
-          <input type="email" placeholder="Email Address" name="email" style="margin: 5px; width: 400px"></input>
-        </div>
-        <div>
-          <textarea placeholder="Message" name="message" style="margin: 5px; width: 400px"></textarea>
+        <div class="container">
+          <div class="row m-2">
+            <div class="col">
+              <input type="text" placeholder="First Name" name="first_name"></input>
+            </div>
+            <div class="col">
+              <input type="text" placeholder="Last Name" name="last_name"></input>
+            </div>
+          </div>
+          <div class="row m-2">
+            <div class="col">
+              <input type="text" placeholder="Contact Number" name="contact"></input>
+            </div>
+          </div>
+          <div class="row m-2">
+            <div class="col">
+              <input type="email" placeholder="Email Address" name="email"></input>
+            </div>
+          </div>
+          <div class="row m-2">
+            <div class="col">
+              <textarea placeholder="Message" name="message"></textarea>
+            </div>
+          </div>
         </div>
         <div style="margin-top: 50px;">
           <button type="submit">Submit</button>
@@ -41,6 +53,6 @@
       document.getElementById('nav-contact').classList.add('active');
     </script>
 
-    <script src="/javascripts/script.js"></script>
+    <%- include('partials/js-imports') %>
   </body>
 </html>

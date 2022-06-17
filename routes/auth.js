@@ -27,7 +27,7 @@ router.post('/login', passport.authenticate('local', {
   failureFlash: true,
 }), (req, res) => {
   req.flash('success', 'Successfully logged in!');
-  return res.redirect('/');
+  return res.redirect('/admin/contacts');
 });
 
 router.get('/register', (req, res) => {
