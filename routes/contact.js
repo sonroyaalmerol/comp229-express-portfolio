@@ -1,13 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-/* GET home page. */
-router.get('/', (req, res, next) => {
-  return res.render('contact', { 
-    title: 'snry | Contact Details',
-    success: req.flash('success'),
-    error: req.flash('error')
-  });
-});
+const contactController = require('../controller/contact');
+
+router.get('/', contactController.contactRenderGet);
 
 module.exports = router;

@@ -1,13 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-/* GET home page. */
-router.get('/', (req, res, next) => {
-  return res.render('projects', { 
-    title: 'snry | Projects',
-    success: req.flash('success'),
-    error: req.flash('error')
-  });
-});
+const projectsController = require('../controller/projects');
+
+router.get('/', projectsController.projectsRenderGet);
 
 module.exports = router;
