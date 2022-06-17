@@ -19,7 +19,7 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/contacts', async (req, res, next) => {
-  const contacts = await BusinessContact.find().lean().exec() ?? [];
+  const contacts = await BusinessContact.find().sort('name').lean().exec() ?? [];
 
   return res.render('business-contacts', { 
     title: 'snry | Business Contacts',
