@@ -34,7 +34,13 @@
         </div>
         <div style="margin-top: 50px;">
           <button type="submit"><%= !data._id ? 'Add' : 'Update' %></button>
+          <button onclick="window.location.href='/admin/contacts'">Cancel</button>
         </div>
+        <% if (data._id) { %>
+          <div style="margin-top: 50px;">
+            <button onclick="window.location.href='/admin/contacts/<%= data._id %>/delete'">Delete</button>
+          </div>
+        <% } %>
       </form>
     </main>
 

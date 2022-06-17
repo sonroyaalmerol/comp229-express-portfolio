@@ -1,4 +1,4 @@
-<% if (locals.success && locals.success.length > 0) { %>
+<% if ((locals.success && locals.success.length > 0) || (locals.message && locals.message.length > 0)) { %>
   <div class="custom-toast success">
     <%= success %>
   </div>

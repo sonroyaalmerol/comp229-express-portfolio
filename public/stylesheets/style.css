@@ -102,6 +102,7 @@ table.glass-card {
   color: white;
   border: none;
   border-collapse: separate;
+  border-spacing: 1em;
   padding: 1rem;
 }
 

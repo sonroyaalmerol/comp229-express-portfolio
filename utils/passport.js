@@ -16,12 +16,10 @@ const User = require('../models/user').User;
 // Initialize Passport.js strategy
 exports.initialize = () => {
   passport.serializeUser((user, done) => {
-    console.log('serialize');
     done(null, user.id);
   });
 
   passport.deserializeUser((id, done) => {
-    console.log('yo')
     User.findOne({
       _id: id
     }, '-password -salt', (err, user) => {
